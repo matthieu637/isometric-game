@@ -1,0 +1,7 @@
+class CoucheTileEditable
+{
+public:
+	int getLargeur() const;
+	int getHauteur() const;
+};
+

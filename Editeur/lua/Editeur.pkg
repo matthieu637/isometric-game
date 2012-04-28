@@ -1,0 +1,9 @@
+class Editeur
+{
+public:
+  static edt::Editeur* getInstance();
+  sf::View* getVueCourante();
+  edt::CarteEditable* getCarteCourante();
+
+};
+

@@ -1,0 +1,7 @@
+class CarteEditable
+{
+public:
+  edt::CoucheTileEditable* getCoucheTileEditable() const;
+
+};
+

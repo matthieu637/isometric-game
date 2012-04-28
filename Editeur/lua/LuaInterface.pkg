@@ -1,0 +1,18 @@
+$#include "edt/Editeur.hpp"
+$#include <SFML/Graphics/View.hpp>
+$#include <SFML/System/Vector2.hpp>
+$#include "edt/CarteEditable.hpp"
+$#include "edt/CoucheTileEditable.hpp"
+
+namespace edt
+{
+	$pfile "Editeur.pkg"
+	$pfile "CarteEditable.pkg"
+	$pfile "CoucheTileEditable.pkg"
+}
+
+namespace sf
+{
+	$pfile "View.pkg"
+	$pfile "Vector2.pkg"
+}

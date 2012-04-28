@@ -1,0 +1,9 @@
+class View
+{
+public:
+#	void Move(float offsetX, float offsetY);
+	void SetCenter(float x, float y);
+	const Vector2f& GetCenter() const;
+	const Vector2f& GetSize() const;
+};
+
