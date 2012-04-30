@@ -61,8 +61,11 @@ void Editeur::run() {
 
         fenetre->clear();
         fenetre->setView(*vue);
+	
+	fenetre->pushGLStates();
         carte->dessinerSur(*fenetre);
-
+	fenetre->popGLStates();
+	
         GUI::getInstance()->dessiner();
         fenetre->display();
     }
