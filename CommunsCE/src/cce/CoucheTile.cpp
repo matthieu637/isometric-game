@@ -137,11 +137,11 @@ void CoucheTile::dessinerSur(RenderTarget& cible) {
 }
 
 int CoucheTile::getLargeur() const {
-    return largeur * Tile::largeurTile ;
+    return largeur;
 }
 
 int CoucheTile::getHauteur() const {
-    return hauteur * Tile::hauteurTile ;
+    return hauteur;
 }
 
 } /* End of namespace cce */

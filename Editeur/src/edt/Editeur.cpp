@@ -66,6 +66,7 @@ void Editeur::run() {
         carte->dessinerSur(*fenetre);
 	fenetre->popGLStates();
 	
+	
         GUI::getInstance()->dessiner();
         fenetre->display();
     }

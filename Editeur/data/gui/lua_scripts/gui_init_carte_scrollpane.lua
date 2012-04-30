@@ -4,6 +4,6 @@ local pane = CEGUI.toScrollablePane( wmn:getWindow("Editeur/Pane") )
 local carte = edt.Editeur:getInstance():getCarteCourante()
 local couche = carte:getCoucheTileEditable()
 
-pane:setContentPaneArea(CEGUI.Rect(0,0,couche:getLargeur(), couche:getHauteur()));
+pane:setContentPaneArea(CEGUI.Rect(0,0,couche:getLargeur()/2, couche:getHauteur()*88))
 
 

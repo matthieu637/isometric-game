@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaInterface
-** Generated automatically by tolua++-1.0.92 on Wed Jan  4 02:39:37 2012.
+** Generated automatically by tolua++-1.0.92 on Tue May  1 00:02:14 2012.
 */
 
 #ifndef __cplusplus
@@ -217,9 +217,9 @@ static int tolua_LuaInterface_edt_CoucheTileEditable_getHauteur00(lua_State* tol
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: SetCenter of class  sf::View */
-#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_SetCenter00
-static int tolua_LuaInterface_sf_View_SetCenter00(lua_State* tolua_S)
+/* method: setCenter of class  sf::View */
+#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_setCenter00
+static int tolua_LuaInterface_sf_View_setCenter00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -237,7 +237,7 @@ static int tolua_LuaInterface_sf_View_SetCenter00(lua_State* tolua_S)
   float x = ((float)  tolua_tonumber(tolua_S,2,0));
   float y = ((float)  tolua_tonumber(tolua_S,3,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'SetCenter'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setCenter'", NULL);
 #endif
   {
    self->setCenter(x,y);
@@ -246,15 +246,15 @@ static int tolua_LuaInterface_sf_View_SetCenter00(lua_State* tolua_S)
  return 0;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'SetCenter'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'setCenter'.",&tolua_err);
  return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: GetCenter of class  sf::View */
-#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_GetCenter00
-static int tolua_LuaInterface_sf_View_GetCenter00(lua_State* tolua_S)
+/* method: getCenter of class  sf::View */
+#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_getCenter00
+static int tolua_LuaInterface_sf_View_getCenter00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -268,7 +268,7 @@ static int tolua_LuaInterface_sf_View_GetCenter00(lua_State* tolua_S)
  {
   const sf::View* self = (const sf::View*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetCenter'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getCenter'", NULL);
 #endif
   {
    const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->getCenter();
@@ -278,15 +278,15 @@ static int tolua_LuaInterface_sf_View_GetCenter00(lua_State* tolua_S)
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'GetCenter'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'getCenter'.",&tolua_err);
  return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: GetSize of class  sf::View */
-#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_GetSize00
-static int tolua_LuaInterface_sf_View_GetSize00(lua_State* tolua_S)
+/* method: getSize of class  sf::View */
+#ifndef TOLUA_DISABLE_tolua_LuaInterface_sf_View_getSize00
+static int tolua_LuaInterface_sf_View_getSize00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -300,7 +300,7 @@ static int tolua_LuaInterface_sf_View_GetSize00(lua_State* tolua_S)
  {
   const sf::View* self = (const sf::View*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetSize'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getSize'", NULL);
 #endif
   {
    const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->getSize();
@@ -310,7 +310,7 @@ static int tolua_LuaInterface_sf_View_GetSize00(lua_State* tolua_S)
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'GetSize'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'getSize'.",&tolua_err);
  return 0;
 #endif
 }
@@ -405,9 +405,9 @@ TOLUA_API int tolua_LuaInterface_open (lua_State* tolua_S)
   tolua_beginmodule(tolua_S,"sf");
    tolua_cclass(tolua_S,"View","sf::View","",NULL);
    tolua_beginmodule(tolua_S,"View");
-    tolua_function(tolua_S,"SetCenter",tolua_LuaInterface_sf_View_SetCenter00);
-    tolua_function(tolua_S,"GetCenter",tolua_LuaInterface_sf_View_GetCenter00);
-    tolua_function(tolua_S,"GetSize",tolua_LuaInterface_sf_View_GetSize00);
+    tolua_function(tolua_S,"setCenter",tolua_LuaInterface_sf_View_setCenter00);
+    tolua_function(tolua_S,"getCenter",tolua_LuaInterface_sf_View_getCenter00);
+    tolua_function(tolua_S,"getSize",tolua_LuaInterface_sf_View_getSize00);
    tolua_endmodule(tolua_S);
    tolua_cclass(tolua_S,"Vector2f","sf::Vector2f","",NULL);
    tolua_beginmodule(tolua_S,"Vector2f");
