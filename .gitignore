@@ -1,2 +1,8 @@
 *.o
 *.a
+*~
+*.kdev4
+Biblio/build/*
+CommunsCE/build/*
+Editeur/build/*
+

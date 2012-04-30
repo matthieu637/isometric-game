@@ -30,7 +30,7 @@ int Tile::getID() const
 void Tile::setImage(const int _id)
 {
     id=_id;
-    SetTexture(ImageManager::getInstance()->get_asset(id));
+    setTexture(ImageManager::getInstance()->get_asset(id));
 }
 
 void Tile::unsetImage()
@@ -49,18 +49,18 @@ void Tile::calculCoordonnes(const int x, const int y)
     yOnScreen = ligne*hauteurTile;
 
     //retire un peu de hauteur pour les tiles qui dépasse la hauteur conforme ( brins d'herbe , ...)
-    decalage_hauteur_image = (GetTexture()->GetHeight() - hauteurTile);
+    decalage_hauteur_image = (getTexture()->getSize().y - hauteurTile);
     yOnScreen -= decalage_hauteur_image;
 
     //décalage d'une rangé sur 2
     if (y % 2 ==0)
-        SetPosition(xOnScreen, yOnScreen);
+        setPosition(xOnScreen, yOnScreen);
     else {
         //rangé décalé
         xOnScreen += demiLargeurTile;
         yOnScreen += demiHauteurTile;
 
-        SetPosition(xOnScreen, yOnScreen);
+        setPosition(xOnScreen, yOnScreen);
     }
 
 
@@ -73,8 +73,8 @@ void Tile::calculCoordonnes(const int x, const int y)
 
 bool Tile::contientPoint(const unsigned int x_vue, const unsigned int y_vue ) const
 {
-    unsigned int x0 = GetPosition().x;
-    unsigned int y0 = GetPosition().y + decalage_hauteur_image;
+    unsigned int x0 = getPosition().x;
+    unsigned int y0 = getPosition().y + decalage_hauteur_image;
 
     //verifie que le point est bien dans le rectangle
     if (x_vue < x0 || x_vue > x0 + largeurTile || y_vue < y0 || y_vue > y0 + hauteurTile)

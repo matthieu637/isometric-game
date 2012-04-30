@@ -33,10 +33,10 @@ const EltDecor* CoucheDecorEditable::getElt(int x, int y) const
         y_ = it->getY();
         if(y_ > y)
             return NULL;
-        x_droit = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).GetWidth() + x_;
-        y_bas = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).GetHeight() + y_;
+        x_droit = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).getSize().x + x_;
+        y_bas = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).getSize().y + y_;
         if(x_ <= x && x <= x_droit && y_ <= y && y <= y_bas){
-            a = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).CopyToImage().GetPixel(x - x_, y - y_).a;
+            a = Ressources::getInstance()->getImageManager()->get_asset(it->getID()).copyToImage().getPixel(x - x_, y - y_).a;
             if(a != 0)
                 return &(*it);
         }
@@ -63,7 +63,7 @@ void CoucheDecorEditable::dessiner(RenderTarget& target) const
 {
     std::set<EltDecor>::iterator it = decor->begin();
     for(; it != decor->end(); ++it)
-        target.Draw(*it);
+        target.draw(*it);
 }
 
 } /* End of namespace edt */

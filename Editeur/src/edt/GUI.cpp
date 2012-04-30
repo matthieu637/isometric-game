@@ -106,30 +106,30 @@ void GUI::chargerRessources() {
 }
 
 void GUI::tocHorloge() {
-    cSys->injectTimePulse((float)(horloge.GetElapsedTime()/1000.));
-    horloge.Reset();
+    cSys->injectTimePulse((float)(horloge.getElapsedTime().asMilliseconds()));
+    horloge.restart();
 }
 
 bool GUI::captureEvent(const sf::Event& Event)
 {
-    switch (Event.Type)
+    switch (Event.type)
     {
     case sf::Event::MouseLeft :
         return cSys->injectMouseLeaves();
     case sf::Event::TextEntered:
-        return cSys->injectChar(Event.Text.Unicode);
+        return cSys->injectChar(Event.text.unicode);
     case sf::Event::KeyPressed:
-        return cSys->injectKeyDown(toCEGUIKey(Event.Key.Code));
+        return cSys->injectKeyDown(toCEGUIKey(Event.key.code));
     case sf::Event::KeyReleased:
-        return cSys->injectKeyUp(toCEGUIKey(Event.Key.Code));
+        return cSys->injectKeyUp(toCEGUIKey(Event.key.code));
     case sf::Event::MouseMoved:
-        return cSys->injectMousePosition(static_cast<float>(Event.MouseMove.X), static_cast<float>(Event.MouseMove.Y));
+        return cSys->injectMousePosition(static_cast<float>(Event.mouseMove.x), static_cast<float>(Event.mouseMove.y));
     case sf::Event::MouseButtonPressed:
-        return cSys->injectMouseButtonDown(toCEGUIMouseButton(Event.MouseButton.Button));
+        return cSys->injectMouseButtonDown(toCEGUIMouseButton(Event.mouseButton.button));
     case sf::Event::MouseButtonReleased:
-        return cSys->injectMouseButtonUp(toCEGUIMouseButton(Event.MouseButton.Button));
+        return cSys->injectMouseButtonUp(toCEGUIMouseButton(Event.mouseButton.button));
     case sf::Event::MouseWheelMoved:
-        return cSys->injectMouseWheelChange(static_cast<float>(Event.MouseWheel.Delta));
+        return cSys->injectMouseWheelChange(static_cast<float>(Event.mouseWheel.delta));
 
     default :
         return false;

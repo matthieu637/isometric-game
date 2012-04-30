@@ -16,7 +16,7 @@ sf::Texture* ImageManager::creer_ressource(const std::string& path, bool *succes
 
     sf::Texture* texture = new sf::Texture;
 
-    if(texture->LoadFromFile( path )){
+    if(texture->loadFromFile( path )){
         *succes = true;
         return texture;
     }

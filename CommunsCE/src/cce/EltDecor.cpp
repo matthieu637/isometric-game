@@ -13,8 +13,8 @@ namespace cce
     {
         //std::cout << ID << std::endl;
         id = ID;
-        SetTexture(ImageManager::getInstance()->get_asset(ID));
-        SetPosition(x,y);
+        setTexture(ImageManager::getInstance()->get_asset(ID));
+        setPosition(x,y);
     }
 
     EltDecor::~EltDecor()

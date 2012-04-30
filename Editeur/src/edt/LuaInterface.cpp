@@ -240,7 +240,7 @@ static int tolua_LuaInterface_sf_View_SetCenter00(lua_State* tolua_S)
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'SetCenter'", NULL);
 #endif
   {
-   self->SetCenter(x,y);
+   self->setCenter(x,y);
   }
  }
  return 0;
@@ -271,7 +271,7 @@ static int tolua_LuaInterface_sf_View_GetCenter00(lua_State* tolua_S)
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetCenter'", NULL);
 #endif
   {
-   const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->GetCenter();
+   const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->getCenter();
     tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const sf::Vector2f");
   }
  }
@@ -303,7 +303,7 @@ static int tolua_LuaInterface_sf_View_GetSize00(lua_State* tolua_S)
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetSize'", NULL);
 #endif
   {
-   const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->GetSize();
+   const sf::Vector2f& tolua_ret = (const sf::Vector2f&)  self->getSize();
     tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const sf::Vector2f");
   }
  }

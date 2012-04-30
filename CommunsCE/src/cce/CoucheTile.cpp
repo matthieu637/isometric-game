@@ -90,8 +90,8 @@ int CoucheTile::indiceDe(const int x_vue, const int y_vue) const {
 
 void CoucheTile::dessinerSur(RenderTarget& cible) {
 
-    Vector2f centre =  cible.GetView().GetCenter();
-    const Vector2f taille =  cible.GetView().GetSize();
+    Vector2f centre =  cible.getView().getCenter();
+    const Vector2f taille =  cible.getView().getSize();
 
     int gauche = centre.x - taille.x/2;
     int haut = centre.y - taille.y /2;
@@ -127,7 +127,7 @@ void CoucheTile::dessinerSur(RenderTarget& cible) {
         finColonne = indice_ligne + nbTileLargeur;
 
         for (indice_colonne = indice_ligne; indice_colonne < finColonne ; indice_colonne++ ) {
-            cible.Draw(*indice_colonne);
+            cible.draw(*indice_colonne);
             //        stats_parcours++;
 
         }

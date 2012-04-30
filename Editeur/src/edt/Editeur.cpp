@@ -25,27 +25,27 @@ Editeur::~Editeur()
 void Editeur::init(const string& path_carte) {
 
     fenetre = new sf::RenderWindow(sf::VideoMode( 1600, 900 ), "Hunters' World", sf::Style::Default );
-    fenetre->ShowMouseCursor(false);
+    fenetre->setMouseCursorVisible(false);
     
-    fenetre->SetFramerateLimit(60);
+    fenetre->setFramerateLimit(60);
 
     GUI::getInstance()->init();
 
 
     vue = new View(FloatRect(0,0,1600,900));
-    fenetre->SetView(*vue);
+    fenetre->setView(*vue);
 
     carte = new CarteEditable(path_carte);
 }
 
 void Editeur::run() {
 
-    while (fenetre->IsOpened())
+    while (fenetre->isOpen())
     {
         GUI::getInstance()->tocHorloge();
 
         sf::Event Event;
-        while (fenetre->PollEvent(Event))
+        while (fenetre->pollEvent(Event))
         {
 
             if (GUI::getInstance()->captureEvent(Event)) {
@@ -54,17 +54,17 @@ void Editeur::run() {
             }
 
 
-            if (Event.Type == sf::Event::Closed){
-                fenetre->Close();
+            if (Event.type == sf::Event::Closed){
+                fenetre->close();
             }
         }
 
-        fenetre->Clear();
-        fenetre->SetView(*vue);
+        fenetre->clear();
+        fenetre->setView(*vue);
         carte->dessinerSur(*fenetre);
 
         GUI::getInstance()->dessiner();
-        fenetre->Display();
+        fenetre->display();
     }
 }
 
