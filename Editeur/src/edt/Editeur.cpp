@@ -3,6 +3,9 @@
 #include "edt/Editeur.hpp"
 
 
+#include <CEGUI/elements/CEGUIScrollablePane.h>
+#include <CEGUI/elements/CEGUIScrollbar.h>
+
 using cce::ImageManager;
 using edt::GUI;
 using std::string;
@@ -54,7 +57,7 @@ void Editeur::run() {
                 //continue;
             }
 
-            if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Button::Right) {
+            if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right) {
                 pressed = true;
                 x = event.mouseButton.x;
                 y = event.mouseButton.y;
@@ -75,11 +78,15 @@ void Editeur::run() {
 
                 vue->setCenter(vue->getCenter().x + dx, vue->getCenter().y + dy);
 
+                CEGUI::ScrollablePane* w = static_cast<CEGUI::ScrollablePane*>(GUI::getInstance()->getRootWindow()->getChild("Editeur/Pane"));
+                w->getHorzScrollbar()->setScrollPosition(100*((vue->getCenter().x - vue->getSize().x/2)/(carte->getCoucheTileEditable()->getLargeur() - vue->getSize().x/158 + 2)));
+                w->getVertScrollbar()->setScrollPosition(100*((vue->getCenter().y - vue->getSize().y/2)/(carte->getCoucheTileEditable()->getHauteur() - vue->getSize().y/88 + 4)));
+
                 x = event.mouseMove.x;
                 y = event.mouseMove.y;
             }
 
-            if(pressed && event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Button::Right) {
+            if(pressed && event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Right) {
                 pressed = false;
             }
 

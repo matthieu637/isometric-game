@@ -9,7 +9,7 @@ function gui_viewscroll_change_vertical(args)
 	logger:logEvent( vue:getCenter().x .." , ".. scroll:getScrollPosition()/100 .. " , " .. couche:getHauteur() .. " , " .. (vue:getSize().y/2) )
 	logger:logEvent( scroll:getScrollPosition()/100 * couche:getHauteur()  + vue:getSize().y/2  )
 	]]	
-	vue:setCenter(vue:getCenter().x, scroll:getScrollPosition()/100 * ( couche:getHauteur() - vue:getSize().y/(2*88))  + vue:getSize().y/2 )
+	vue:setCenter(vue:getCenter().x, scroll:getScrollPosition()/100 * ( couche:getHauteur() - vue:getSize().y/88 + 4)  + vue:getSize().y/2 )
 end
 
 function gui_viewscroll_change_horizontal(args)

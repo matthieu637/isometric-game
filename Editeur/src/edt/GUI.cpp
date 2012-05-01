@@ -17,8 +17,6 @@
 #include <CEGUI/CEGUIEventArgs.h>
 #include <CEGUI/CEGUISubscriberSlot.h>
 
-
-
 #include <iostream>
 #include "edt/GUI.hpp"
 #include <edt/SFML.hpp>
@@ -42,7 +40,7 @@ void GUI::init() {
 
     initialiserRessources();
     chargerRessources();
-    
+
 
     cSys->setDefaultFont("DejaVuSans-10");
     // cSys->setDefaultMouseCursor( "Vanilla", "MouseArrow" );
@@ -53,10 +51,14 @@ void GUI::init() {
 
     cSys->executeScriptFile("gui_editeur.lua","lua_scripts");
 
-    CEGUI::Window* myRoot = CEGUI::WindowManager::getSingleton().loadWindowLayout( "Editeur.layout" );
-    cSys->setGUISheet( myRoot );
+    rootW = CEGUI::WindowManager::getSingleton().loadWindowLayout( "Editeur.layout" );
+    cSys->setGUISheet( rootW );
 
     cSys->executeScriptFile("gui_init_editeur.lua","lua_scripts");
+}
+
+CEGUI::Window* GUI::getRootWindow() {
+    return rootW;
 }
 
 void GUI::dessiner() const

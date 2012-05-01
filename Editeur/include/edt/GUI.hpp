@@ -3,6 +3,7 @@
 
 #include <bib/Singleton.hpp>
 #include <CEGUI/CEGUISystem.h>
+#include <CEGUI/CEGUIWindow.h>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/System/Clock.hpp>
@@ -23,7 +24,8 @@ public:
     void dessiner() const;
     void tocHorloge();
     bool captureEvent(const Event& Event);
-   
+    CEGUI::Window* getRootWindow();
+
 protected:
     GUI();
     ~GUI();
@@ -36,8 +38,8 @@ private:
     CEGUI::Key::Scan toCEGUIKey(const sf::Keyboard::Key& Code) const;
     CEGUI::MouseButton toCEGUIMouseButton(const sf::Mouse::Button& Button) const;
 
-private:    
-
+private:
+    CEGUI::Window *rootW;
     CEGUI::System *cSys;
     sf::Clock horloge;
 
