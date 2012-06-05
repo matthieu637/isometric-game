@@ -64,7 +64,7 @@ if(CEGUI_DEBUG MATCHES Debug)
 				)
 
 	find_library( CEGUI_LIBRARY_TOLUA_DEBUG
-				  NAMES CEGUItoluapp-d
+				  NAMES tolua-d
 				  PATHS
 			      	  /usr/local/lib
 				  /usr/lib
@@ -121,7 +121,7 @@ else()
 				  /opt/lib
 				)
 	find_library( CEGUI_LIBRARY_TOLUA
-				  NAMES CEGUItoluapp
+				  NAMES tolua
 				  PATHS
 			      	  /usr/local/lib
 				  /usr/lib
